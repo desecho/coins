@@ -1,0 +1,7 @@
+mysql-python
+django-annoying
+pillow
+
+django_extensions
+Werkzeug
+django-debug_toolbar

@@ -1,3 +1,10 @@
+installation_settings.sh
+coins_project/media
+coins_project/static/admin/
+coins_project/static/bower/
+coins_project/coins_project/secret.py
+coins_project/coins_project/local_settings.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
