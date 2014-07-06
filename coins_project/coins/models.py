@@ -71,10 +71,10 @@ class Coin(models.Model):
         name = '%s %s' % (self.value, unicode(self.currency))
         if self.year:
             name += ' - %d' % self.year
-        if self.name:
-            name += ' - %s' % self.name
         if self.series:
             name += ' - %s' % self.series.name
+        if self.name:
+            name += ' - %s' % self.name
         return name
 
     class Meta:
