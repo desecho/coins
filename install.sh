@@ -5,5 +5,4 @@ bower install
 
 cd coins_project
 ./manage.py collectstatic
-./manage.py makemigrations
 ./manage.py syncdb

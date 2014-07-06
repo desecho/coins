@@ -59,7 +59,7 @@ class Coin(models.Model):
     value = models.CharField('номинал', max_length=255)
     currency = models.ForeignKey(Currency, verbose_name='денежная единица')
     name = models.CharField('название', max_length=255, null=True, blank=True)
-    year = models.PositiveSmallIntegerField('год')
+    year = models.PositiveSmallIntegerField('год', null=True, blank=True)
     image1 = models.ImageField('изображение 1', upload_to=settings.UPLOAD_DIR, null=True, blank=True)
     image2 = models.ImageField('изображение 2', upload_to=settings.UPLOAD_DIR, null=True, blank=True)
     series = models.ForeignKey(Series, verbose_name='серия', null=True, blank=True)
@@ -68,7 +68,9 @@ class Coin(models.Model):
     comment = models.CharField('комментарий', max_length=255, null=True, blank=True)
 
     def __unicode__(self):
-        name = '%s %s - %d' % (self.value, unicode(self.currency), self.year)
+        name = '%s %s' % (self.value, unicode(self.currency))
+        if self.year is not None:
+            name += ' - %d' % self.year
         if self.name is not None:
             name += ' - %s' % self.name
         if self.series is not None:
