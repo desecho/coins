@@ -69,11 +69,11 @@ class Coin(models.Model):
 
     def __unicode__(self):
         name = '%s %s' % (self.value, unicode(self.currency))
-        if self.year is not None:
+        if self.year:
             name += ' - %d' % self.year
-        if self.name is not None:
+        if self.name:
             name += ' - %s' % self.name
-        if self.series is not None:
+        if self.series:
             name += ' - %s' % self.series.name
         return name
 
