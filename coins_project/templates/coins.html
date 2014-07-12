@@ -1,0 +1,10 @@
+{% extends 'site_base.html' %}
+{% block content %}
+
+{% for coin in coins %}
+    <img src="/media/{{ coin.image1}}" width="100" alt="{{ coin }}" title="{{ coin }}">
+    <img src="/media/{{ coin.image2}}" width="100" alt="{{ coin }}" title="{{ coin }}">
+    <br>
+{% endfor %}
+
+{% endblock %}

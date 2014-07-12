@@ -124,6 +124,10 @@ STATICFILES_DIRS = (
 
 UPLOAD_DIR = 'img'
 
+TEMPLATE_DIRS = (
+    BASE_DIR + '/templates',
+)
+
 try:
     LOCAL_SETTINGS
 except NameError:
