@@ -3,6 +3,7 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
 
+
 class Country(models.Model):
     name = models.CharField('название', max_length=255, unique=True)
 
@@ -60,12 +61,18 @@ class Coin(models.Model):
     currency = models.ForeignKey(Currency, verbose_name='денежная единица')
     name = models.CharField('название', max_length=255, null=True, blank=True)
     year = models.PositiveSmallIntegerField('год', null=True, blank=True)
-    image1 = models.ImageField('изображение 1', upload_to=settings.UPLOAD_DIR, null=True, blank=True)
-    image2 = models.ImageField('изображение 2', upload_to=settings.UPLOAD_DIR, null=True, blank=True)
-    series = models.ForeignKey(Series, verbose_name='серия', null=True, blank=True)
-    period = models.ForeignKey(Period, verbose_name='период', null=True, blank=True)
-    material = models.CharField('материал', max_length=255, null=True, blank=True)
-    comment = models.CharField('комментарий', max_length=255, null=True, blank=True)
+    image1 = models.ImageField('изображение 1', upload_to=settings.UPLOAD_DIR,
+                               null=True, blank=True)
+    image2 = models.ImageField('изображение 2', upload_to=settings.UPLOAD_DIR,
+                               null=True, blank=True)
+    series = models.ForeignKey(Series, verbose_name='серия', null=True,
+                               blank=True)
+    period = models.ForeignKey(Period, verbose_name='период', null=True,
+                               blank=True)
+    material = models.CharField('материал', max_length=255, null=True,
+                                blank=True)
+    comment = models.CharField('комментарий', max_length=255, null=True,
+                               blank=True)
 
     def __unicode__(self):
         name = '%s %s' % (self.value, unicode(self.currency))
